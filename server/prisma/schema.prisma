@@ -1,0 +1,150 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum GameMode {
+  SOLO
+  MULTI
+}
+
+enum MissionStatus {
+  LOBBY
+  ACTIVE
+  COMPLETED
+  FAILED
+}
+
+enum PlayerRole {
+  MANAGER
+  SCIENCE
+  SYSTEMS
+  OPERATIONS
+}
+
+enum TargetBody {
+  FLOODS
+  DEFORESTATION
+  WILDFIRES
+  OCEANS
+  MOON
+  MARS
+}
+
+enum ItemCategory {
+  BUS
+  SOLAR
+  BATTERY
+  ANTENNA
+  OBC
+  PAYLOAD
+  LAUNCHER
+}
+
+enum OrbitRegime {
+  LEO
+  SSO
+  GEO
+  LUNAR
+  MARS
+}
+
+model CatalogItem {
+  id             String       @id @db.VarChar(50)
+  category       ItemCategory
+  name           String       @db.VarChar(100)
+  description    String
+  costMusd       Float        @map("cost_musd")
+  massKg         Float        @map("mass_kg")
+  powerW         Float        @map("power_w")
+  dataRateMbps   Float        @default(0) @map("data_rate_mbps")
+  scienceBase    Int          @default(0) @map("science_base")
+  riskDelta      Float        @default(0) @map("risk_delta")
+  allowedTargets TargetBody[] @map("allowed_targets")
+  specsJson      Json         @default("{}") @map("specs_json")
+
+  @@index([category])
+  @@map("catalog_items")
+}
+
+model NasaMission {
+  id                 String      @id @db.VarChar(50)
+  name               String      @db.VarChar(100)
+  fullTitle          String      @map("full_title") @db.VarChar(255)
+  launchYear         Int         @map("launch_year")
+  status             String      @db.VarChar(50)
+  targetId           TargetBody  @map("target_id")
+  orbitType          OrbitRegime @map("orbit_type")
+  altitudeKm         Int         @map("altitude_km")
+  massKg             Float       @map("mass_kg")
+  costMusd           Float       @map("cost_musd")
+  primaryInstruments String[]    @map("primary_instruments")
+  summary            String
+  nasaUrl            String?     @map("nasa_url")
+  featureVector      Float[]     @map("feature_vector")
+  matchedMissions    Mission[]
+
+  @@map("nasa_missions")
+}
+
+model Mission {
+  id                String            @id @default(uuid()) @db.Uuid
+  roomCode          String            @unique @map("room_code") @db.VarChar(8)
+  mode              GameMode          @default(SOLO)
+  status            MissionStatus     @default(LOBBY)
+  targetId          TargetBody?       @map("target_id")
+  currentPhase      Int               @default(1) @map("current_phase")
+  cmlLevel          Int               @default(1) @map("cml_level")
+  designJson        Json              @default("{}") @map("design_json")
+  telemetryJson     Json              @default("{}") @map("telemetry_json")
+  scoreTotal        Int?              @map("score_total")
+  scoreBreakdown    Json?             @map("score_breakdown")
+  matchedNasaId     String?           @map("matched_nasa_id") @db.VarChar(50)
+  nasaSimilarityPct Float?            @map("nasa_similarity_pct")
+  startedAt         DateTime          @default(now()) @map("started_at")
+  completedAt       DateTime?         @map("completed_at")
+
+  matchedNasa       NasaMission?      @relation(fields: [matchedNasaId], references: [id])
+  players           MissionPlayer[]
+  eventsLog         MissionEventLog[]
+
+  @@index([roomCode])
+  @@map("missions")
+}
+
+model MissionPlayer {
+  id            String     @id @default(uuid()) @db.Uuid
+  missionId     String     @map("mission_id") @db.Uuid
+  username      String     @db.VarChar(50)
+  role          PlayerRole
+  actionsCount  Int        @default(0) @map("actions_count")
+  proposalsMade Int        @default(0) @map("proposals_made")
+  votesCast     Int        @default(0) @map("votes_cast")
+  pingsSent     Int        @default(0) @map("pings_sent")
+  joinedAt      DateTime   @default(now()) @map("joined_at")
+
+  mission       Mission    @relation(fields: [missionId], references: [id], onDelete: Cascade)
+
+  @@unique([missionId, role])
+  @@map("mission_players")
+}
+
+model MissionEventLog {
+  id                String      @id @default(uuid()) @db.Uuid
+  missionId         String      @map("mission_id") @db.Uuid
+  phaseNumber       Int         @map("phase_number")
+  actorRole         PlayerRole? @map("actor_role")
+  eventType         String      @map("event_type") @db.VarChar(50)
+  description       String
+  telemetrySnapshot Json?       @map("telemetry_snapshot")
+  createdAt         DateTime    @default(now()) @map("created_at")
+
+  mission           Mission     @relation(fields: [missionId], references: [id], onDelete: Cascade)
+
+  @@index([missionId, phaseNumber])
+  @@map("mission_events_log")
+}

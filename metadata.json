@@ -1,0 +1,6 @@
+{
+  "name": "MissionSphere",
+  "description": "Serious game stratégique de conception de missions spatiales NASA — Design. Negotiate. Launch. Learn.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

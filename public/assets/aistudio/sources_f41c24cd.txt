@@ -1,0 +1,199 @@
+
+https://www.spaceappschallenge.org/2026/challenges/space-mission-design-game/
+Concevoir une mission spatiale exige une analyse approfondie des contraintes, notamment les objectifs de la mission, la conception du vaisseau spatial, les instruments scientifiques, les lanceurs, le budget, l'énergie, la masse, les communications et les contraintes orbitales. Pour les étudiants qui ont rarement l'occasion d'expérimenter une mission complète, de sa conception à son exécution, ces compromis restent souvent abstraits. Votre défi consiste à créer un jeu interactif permettant aux participants de concevoir, gérer et simuler une mission spatiale complète, tout en prenant des décisions d'ingénierie, en gérant des ressources limitées et en évaluant l'impact de chaque choix sur la réussite de leur mission.
+
+Arrière-plan
+Les missions spatiales sont des systèmes complexes où objectifs scientifiques, exigences techniques, ressources disponibles et contraintes opérationnelles doivent s'harmoniser. La conception d'une mission implique des décisions concernant le vaisseau spatial, les instruments scientifiques, le lanceur, l'orbite, l'alimentation électrique, la masse, les communications, le budget et la durée de vie de la mission. Une décision améliorant un aspect de la mission peut en engendrer d'autres. Par exemple, l'ajout d'un instrument plus performant peut accroître la valeur scientifique, mais aussi la masse, la consommation d'énergie, le volume de données et le coût. Comprendre ces compromis est essentiel à la réussite des missions spatiales.
+
+Cependant, l'apprentissage de la conception des missions spatiales se limite souvent à des exercices théoriques, car les étudiants et les futurs ingénieurs ont rarement accès à un environnement leur permettant d'expérimenter une mission complète, de sa conception à son exécution. Les outils existants se concentrent généralement sur des sujets individuels tels que la mécanique orbitale, la conception des engins spatiaux ou les lancements de fusées, sans montrer comment ces éléments interagissent au sein d'un système global. Il en résulte un fossé entre l'apprentissage des concepts spatiaux individuels et la compréhension du processus de prise de décisions d'ingénierie intégrées par les équipes de mission.
+
+Un jeu interactif peut contribuer à combler cette lacune en permettant aux participants d'expérimenter, de prendre des décisions, de faire face à des contraintes et de tirer des leçons des missions réussies comme des échecs. Les joueurs peuvent concevoir des missions individuellement ou collaborer en équipes de quatre maximum, chaque participant contribuant à la stratégie de la mission et travaillant ensemble pour obtenir le meilleur résultat possible. Les approches possibles incluent la planification de la mission, la configuration du vaisseau spatial, la sélection des instruments, la gestion des ressources, le choix de l'orbite, la planification du lancement, les communications et la simulation de la mission. Nous vous encourageons à développer des alternatives créatives qui rendent l'expérience captivante tout en préservant les compromis fondamentaux inhérents à la conception de missions spatiales réelles.
+
+Objectifs
+Votre défi consiste à créer un jeu interactif de conception de missions spatiales permettant aux participants de découvrir le processus de conception et de gestion d'une mission spatiale complète. Vous pouvez envisager un mode de jeu individuel ou collaboratif (jusqu'à quatre joueurs), où les participants travaillent ensemble pour prendre des décisions stratégiques et optimiser les performances de la mission.
+
+Le jeu pourrait permettre aux participants de définir un objectif de mission, d'établir les exigences de celle-ci, de concevoir un vaisseau spatial, de sélectionner des instruments scientifiques, de choisir un lanceur et une orbite, et de gérer des contraintes essentielles telles que le budget, la masse, l'énergie, les communications, les données et la durée de vie de la mission. Les joueurs bénéficient ainsi d'une meilleure compréhension de l'impact de leurs décisions sur les autres aspects de la mission et des compromis inhérents à la conception de missions spatiales réelles.
+
+Une solution efficace pourrait inclure un jeu ou une simulation interactive et fonctionnelle dotée d'une interface utilisateur claire, d'un système de configuration des missions, de mécanismes de gestion des ressources, d'un mode collaboratif ou multijoueur jusqu'à quatre participants, ainsi que d'un système de simulation et d'évaluation des missions. Le jeu pourrait fournir un retour d'information sur les performances des missions et récompenser les décisions d'ingénierie pertinentes, la gestion efficace des ressources, la collaboration fructueuse et l'atteinte des objectifs. Les participants sont encouragés à développer des mécanismes de jeu, des visualisations, des systèmes de notation et des scénarios de mission créatifs qui rendent l'expérience captivante tout en incitant les joueurs à résoudre des problèmes, à faire des compromis et à collaborer pour mener à bien la mission.
+
+Considérations potentielles
+Vous pouvez (mais vous n'y êtes pas obligé) prendre en considération les éléments suivants :
+
+Conception et expérience de jeu
+
+Le jeu pourrait être accessible aux participants ayant différents niveaux de connaissances en sciences et ingénierie spatiales.
+Le jeu pourrait prendre en charge les modes solo et équipe, permettant à quatre participants de collaborer sur la même mission.
+Les membres de l'équipe peuvent avoir différentes responsabilités, telles que la planification de la mission, la conception du vaisseau spatial, les sciences, les communications ou la gestion des ressources.
+Des objectifs clairs et un retour d'information permettent aux participants de comprendre pourquoi une mission réussit ou échoue.
+Envisagez de rendre le jeu interactif, en permettant aux participants de modifier la conception de leur mission et de la simuler plusieurs fois.
+Un système de notation pourrait récompenser la réussite de la mission, la valeur scientifique, l'utilisation efficace des ressources et la prise de décision efficace.
+Le jeu pourrait inclure différents niveaux de difficulté, types de missions ou scénarios.
+Conception de mission
+
+Les participants pourraient commencer par définir un objectif de mission avant de prendre des décisions concernant le vaisseau spatial et l'ingénierie.
+Il convient d'attribuer une conséquence à chaque décision de conception majeure. Par exemple, augmenter le nombre d'instruments pourrait accroître les capacités scientifiques, mais aussi la masse, la consommation d'énergie, le coût et la quantité de données produites.
+Il convient de démontrer qu'il existe rarement une solution unique et parfaite. Différentes combinaisons de vaisseaux spatiaux, d'instruments, d'orbites et de lanceurs pourraient permettre d'atteindre le même objectif de mission.
+Il convient de prendre en compte des contraintes réalistes telles que le budget limité, la masse du vaisseau spatial, la puissance disponible, la capacité de communication et la durée de vie de la mission.
+Vaisseau spatial et charge utile
+
+Le vaisseau spatial pourrait comprendre des composants tels que la structure, les systèmes d'alimentation, les batteries, les systèmes de communication, les ordinateurs de bord, le contrôle d'attitude et les instruments scientifiques.
+Les instruments scientifiques peuvent présenter différentes caractéristiques, notamment leur masse, leur consommation d'énergie, leur coût, la génération de données et leur valeur scientifique.
+Envisagez de permettre aux participants de choisir entre des composants de vaisseau spatial simples et avancés en fonction du niveau de difficulté.
+Orbiter et lancer
+
+Le jeu pourrait proposer plusieurs options orbitales et expliquer leurs caractéristiques de base.
+Les participants pourraient examiner comment l'orbite choisie affecte la couverture, les possibilités d'observation, les communications, la durée de vie de la mission et d'autres exigences de la mission.
+Les lanceurs pourraient avoir des capacités de charge utile, des coûts et des capacités orbitales différents.
+Envisagez d'intégrer une vérification que la masse du vaisseau spatial et l'orbite sélectionnée sont compatibles avec le lanceur choisi.
+Gestion des ressources
+
+Le jeu doit clairement afficher les principales ressources disponibles pour l'équipe en mission.
+Les ressources importantes pourraient inclure :
+Masse : la masse totale du vaisseau spatial et de sa charge utile.
+Puissance : l'énergie disponible pour faire fonctionner les systèmes et instruments du vaisseau spatial.
+Budget : les ressources financières disponibles pour développer et mener à bien la mission.
+Données : la quantité d'informations générées par les instruments scientifiques.
+Communications : capacité du vaisseau spatial à transmettre des données aux stations au sol.
+Durée : Durée de développement et de fonctionnement prévue de la mission.
+Vous pouvez envisager d'identifier les ressources les plus essentielles à votre mission spécifique.
+Collaboration
+
+En mode équipe, jusqu'à quatre participants peuvent travailler ensemble sur la même mission.
+Envisagez d'attribuer aux membres de l'équipe des rôles ou des responsabilités différents tout en leur demandant de prendre des décisions collectivement.
+Le jeu pourrait inclure des situations où les membres de l'équipe doivent négocier entre des priorités concurrentes.
+Le résultat final de la mission pourrait dépendre de l'efficacité avec laquelle l'équipe coordonnera ses décisions.
+Valeur éducative
+
+Les concepts scientifiques et d'ingénierie sont plus faciles à comprendre lorsqu'ils sont expliqués en termes simples, sans présupposer de connaissances approfondies.
+Des concepts complexes tels que l'altitude orbitale, la capacité de charge utile, la consommation d'énergie, le débit de données et les communications pourraient être introduits directement dans le jeu.
+Pensez à inclure de brèves explications, des tutoriels, des indicateurs visuels ou des ressources pédagogiques facultatives.
+Il est préférable d'expliquer aux participants pourquoi une décision particulière affecte le déroulement de la mission, plutôt que de simplement indiquer si la décision est correcte ou incorrecte.
+Vous pouvez envisager d'ajouter des fonctionnalités telles que :
+
+Plusieurs scénarios de mission avec des objectifs différents
+Événements aléatoires ou contraintes de mission inattendues
+Différents niveaux de difficulté
+Modèles de vaisseaux spatiaux réalistes ou simplifiés
+Visualisations interactives de vaisseaux spatiaux
+Tableaux de bord de mission affichant la consommation de ressources en temps réel
+Classements ou classements de missions
+Rapports de mission générés à la fin de chaque simulation
+La possibilité d'enregistrer, de partager et de comparer les plans de mission
+Missions coopératives pour des équipes de quatre participants maximum
+Scénarios compétitifs où différentes équipes conçoivent des missions pour atteindre le même objectif
+Un mode bac à sable qui permet aux participants d'expérimenter sans contraintes prédéfinies
+Une analyse post-mission expliquant pourquoi la mission a réussi ou échoué.
+Pour accéder aux données et ressources relatives à ce défi, consultez l'onglet Ressources en haut de la page. D'autres ressources pourront être ajoutées avant le début du hackathon.
+
+## **Résumé – Défi des applications spatiales de la NASA 2026**
+
+**Thème :** Créer un jeu interactif permettant de concevoir, gérer et simuler une mission spatiale complète.
+
+### **1. Quel est le problème à résoudre ?**
+
+La conception d'une mission spatiale est complexe. Elle nécessite de prendre plusieurs décisions concernant :
+
+- Le vaisseau spatial.
+- Les instruments scientifiques.
+- Le lanceur et l'orbite.
+- Le budget et la masse.
+- L'énergie et les communications.
+- La quantité de données.
+- La durée de la mission.
+
+Aujourd'hui, les étudiants apprennent souvent ces notions de manière théorique, sans pouvoir expérimenter une mission complète.
+
+### **2. Ce que la NASA attend de vous**
+
+Vous devez développer un **jeu ou simulateur interactif** dans lequel les participants pourront :
+
+1. Choisir un objectif de mission spatiale.
+2. Définir les caractéristiques de la mission.
+3. Construire et configurer un vaisseau spatial.
+4. Sélectionner les instruments scientifiques.
+5. Choisir un lanceur et une orbite.
+6. Gérer les ressources disponibles.
+7. Lancer la simulation.
+8. Observer les conséquences de leurs décisions.
+9. Analyser les réussites et les échecs de la mission.
+
+### **3. Les fonctionnalités importantes**
+
+| Fonctionnalité | Description                                     |
+| -------------- | ----------------------------------------------- |
+| Conception     | Construire et configurer son vaisseau           |
+| Gestion        | Contrôler le budget, la masse et l'énergie      |
+| Simulation     | Reproduire les différentes étapes d'une mission |
+| Visualisation  | Afficher le vaisseau et son environnement       |
+| Collaboration  | Permettre à 4 joueurs de travailler ensemble    |
+| Évaluation     | Noter les performances de la mission            |
+| Apprentissage  | Expliquer les conséquences de chaque décision   |
+
+### **4. Les contraintes à respecter**
+
+Le jeu doit montrer que chaque décision a des conséquences.
+
+Par exemple :
+
+- Ajouter un instrument scientifique augmente la valeur scientifique.
+- Mais cela augmente également la masse, le coût et la consommation énergétique.
+- Choisir une mauvaise orbite peut réduire les possibilités d'observation.
+- Choisir un lanceur inadapté peut empêcher le lancement.
+
+Il ne doit donc pas exister une seule solution parfaite.
+
+### **5. Les fonctionnalités supplémentaires recommandées**
+
+- Plusieurs scénarios de missions spatiales.
+- Différents niveaux de difficulté.
+- Des événements imprévus et des pannes.
+- Des tableaux de bord en temps réel.
+- Des modèles de vaisseaux réalistes.
+- Un classement des meilleures missions.
+- Des rapports automatiques après chaque simulation.
+- La sauvegarde et le partage des missions.
+- Un mode libre pour expérimenter.
+- Une analyse détaillée des échecs.
+
+### **6. Comment votre projet sera évalué ?**
+
+L'objectif est de proposer une expérience qui soit à la fois :
+
+- **Éducative :** apprendre réellement les principes de l'ingénierie spatiale.
+- **Interactive :** permettre aux participants de prendre des décisions.
+- **Réaliste :** intégrer les contraintes des vraies missions spatiales.
+- **Ludique :** donner envie de jouer et d'expérimenter.
+- **Collaborative :** encourager le travail en équipe.
+
+## **En résumé : ce que vous devez construire**
+
+Vous devez créer une sorte de **simulateur de la NASA sous forme de jeu vidéo**, dans lequel un joueur ou une équipe joue le rôle d'une agence spatiale.
+
+Il devra partir de zéro, concevoir son vaisseau, choisir ses équipements, préparer son lancement, exécuter sa mission et analyser les résultats.
+
+[Astronautics: Anatomy of a Satellite Infographic | LivePhysics™](https://images.openai.com/static-rsc-4/DVz1k5rakczbxZ4-R-tszHFfM1rRHHErUGnvuyx03eg9ahxPVDmlkaFi6kpi1jgcJJSGFooGdk_Xrh9jVdDD1kxZtTx3bEmpffSNhP-tapjJEoh4Ezp22h5B50RpPZlPXb3Jf0b-X_WHo8az-jBVHk5uotqPgSOTcJYhiq9IQPo?purpose=inline)
+
+[NASA Introduces 2022 Class of Flight Directors – Meet the 7 New Additions to the Team](https://images.openai.com/static-rsc-4/ZQpkGZAUzdpx-pTwPfvDlpn7gaXzU1X16Q84d1e7DFkFVGIzupzrGCJF3qQ8K-DU-ZSgAaR9RyP9alMs3QsYP7A5a6N7T4XNvh5q4IkQcldYZZSoRUIlshIWG17xmIygeTYjejKCqTQQLsi4GEvMFdRmVWDRlJXUt2w1rayeyF4?purpose=inline)
+
+[Oh, the Places We've Been: 21 Spacecraft Trajectories Plotted in One Picture - Universe Today](https://images.openai.com/static-rsc-4/rDH1oGxdPilvJRYeJujK0BbrcxxvkK5iTkKrSAQgb7RuM6P71IoRc4-mZrnvJEzVkpOElzjj7t0lsOJ37hhXmU6KFyLAHCkSvBPf5G4lRV_2yJqFavYoGq39sAdZZQ5aL387Ai3_UfZa51Zk7o4nCCtvebDoasRffSpBYiJfvJw?purpose=inline)
+
+9
+
+**Mon conseil :** ne faites pas simplement un jeu où l'on assemble un vaisseau et où l'on clique sur « Lancer ». Construisez une véritable expérience de gestion de mission spatiale, avec des étapes successives, des tests techniques, des décisions d'ingénierie et des conséquences visibles.
+
+C'est cette profondeur de simulation qui peut faire la différence dans votre participation au hackathon.
+
+
+https://www.asc-csa.gc.ca/eng/youth-educators/digital-games-and-activities.asp
+https://software.nasa.gov/software/GSC-19468-1
+https://sourceforge.net/projects/gmat/
+https://etd.gsfc.nasa.gov/capabilities/integrated-design-center/mission-design-lab/
+https://science.nasa.gov/mission/webb/game-build-it-yourself/#Build-It-Yourself
+
+
+PS C:\WINDOWS\system32> cd C:\Users\theop\Desktop\PC-THEOPHILE\Projet\DEV\space_app_challenge
+PS C:\Users\theop\Desktop\PC-THEOPHILE\Projet\DEV\space_app_challenge> cd C:\Users\theop\Desktop\PC-THEOPHILE\Projet\DEV\space_app_challenge\web-mvp
+PS C:\Users\theop\Desktop\PC-THEOPHILE\Projet\DEV\space_app_challenge\web-mvp> node server.mjs
+ORBITAL prêt : http://localhost:8000
+
+

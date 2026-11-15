@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+:root {
+  --nasa-blue: #0B3D91;
+  --nasa-cyan: #4FC3F7;
+  --nasa-light-blue: #4FC3F7;
+  --nasa-white: #FFFFFF;
+  --bg-void: #040812;
+  --bg-space: #040812;
+  --bg-panel: rgba(11, 22, 44, 0.85);
+  --panel-bg: rgba(11, 22, 44, 0.85);
+  --bg-elevated: #112240;
+  --border-subtle: rgba(79, 195, 247, 0.20);
+  --status-nominal: #10B981;
+  --status-warning: #F59E0B;
+  --status-critical: #EF4444;
+  --role-manager: #FACC15;
+  --role-science: #4FC3F7;
+  --role-systems: #34D399;
+  --role-operations: #FB923C;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-void);
+  color: #e2e8f0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+}
+
+.telemetry-value,
+.font-mono {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.mcc-panel {
+  background: var(--panel-bg);
+  border: 1px solid rgba(79, 195, 247, 0.22);
+  border-radius: 6px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+}
+
+.mcc-panel-glass {
+  background: rgba(11, 22, 44, 0.82);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(79, 195, 247, 0.22);
+  border-radius: 6px;
+}
+
+.mcc-panel:hover {
+  box-shadow: 0 0 15px rgba(79, 195, 247, 0.12);
+}
+
+/* Custom subtle scrollbars for MCC panels */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(4, 8, 18, 0.6);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(79, 195, 247, 0.25);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(79, 195, 247, 0.45);
+}
+
+/* Range slider styling */
+input[type='range'].mcc-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(79, 195, 247, 0.18);
+  outline: none;
+}
+
+input[type='range'].mcc-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  background: #4FC3F7;
+  border: 2px solid #FFFFFF;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+input[type='range'].mcc-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.12);
+}
+
+/* Print / PDF export styling */
+@media print {
+  html, body, #root {
+    height: auto !important;
+    overflow: visible !important;
+    background: #040812 !important;
+    color: #ffffff !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}

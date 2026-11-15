@@ -1,0 +1,39 @@
+[
+  {
+    "roomId": "9NJR5B",
+    "target": "FLOODS",
+    "mode": "MULTI",
+    "score": {
+      "total": 934,
+      "rank": "DIRECTEUR DE MISSION NASA",
+      "science": 100,
+      "budget": 96,
+      "engineering": 92,
+      "collaboration": 72,
+      "survival": 100,
+      "diagnostic": "Votre sélection d'instruments sur orbite SSO (650 km) a produit un retour scientifique remarquable (100/100). Excellente maîtrise de l'enveloppe budgétaire sans sur-ingénierie.",
+      "improvementTip": "Pour viser 950+, optimisez la synergie entre durée de revisite, marge de masse et anticipation des tempêtes solaires."
+    },
+    "nasaMatch": {
+      "missionId": "SWOT",
+      "name": "SWOT",
+      "fullTitle": "Surface Water and Ocean Topography",
+      "launchYear": 2022,
+      "similarityPct": 97,
+      "targetId": "FLOODS",
+      "orbitType": "SSO",
+      "altitudeKm": 891,
+      "massKg": 2000,
+      "costMusd": 1200,
+      "primaryInstruments": [
+        "Radar Interféromètre KaRIn",
+        "Radiomètre Micro-ondes"
+      ],
+      "summary": "Première mission mondiale mesurant la hauteur de presque toute l'eau à la surface de la Terre, même sous couverture nuageuse.",
+      "badgeTitle": "Hydrologue Orbital",
+      "anecdote": "Développé conjointement par la NASA et le CNES, SWOT déploie deux antennes radar distantes de 10 mètres pour mesurer l'élévation des fleuves et océans au centimètre près.",
+      "nasaUrl": "https://science.nasa.gov/mission/swot/"
+    },
+    "completedAt": 1794770931341
+  }
+]

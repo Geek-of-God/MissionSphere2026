@@ -1,0 +1,374 @@
+🖥️ MISSIONSPHERE : Wireframes Détaillés Écran par Écran
+Design System : NASA Mission Control Center (MCC)
+
+Ratio d'affichage : 80% Dashboard 2D / 20% Viewport 3D (Three.js)
+
+Grille : Desktop 16:9 (1920x1080 / 1440x900) — Responsive Tablette
+
+0. ARCHITECTURE GLOBALE DU WORKSPACE (PERSISTANT PHASES 1 À 12)
+Toutes les phases de conception et d'opérations partagent la même structure ergonomique (Shell) afin que les joueurs conservent leurs repères visuels et leurs indicateurs vitaux en permanence.
+
+Plaintext
++---------------------------------------------------------------------------------------------------+
+| [LOGO] MISSIONSPHERE | PHASE X/15 : NOM DE LA PHASE [CML-X] | RÔLE: [BADGE] | [SON] [AIDE] [QUIT] |
++---------------------------------------------------------------------------------------------------+
+| HUD TÉLÉMÉTRIE : [BUDGET: $120M/$200M] [MASSE: 410/500kg] [PUISSANCE: +45W] [DATA: 80%] [RISK: 12%]|
++---------------+---------------------------------------------------------------+-------------------+
+| TIMELINE      |                                                               | SPACE MENTOR (IA) |
+| [x] 01. Brief |                                                               | +---------------+ |
+| [x] 02. Req.  |                                                               | | Avatar IA     | |
+| [>] 03. MDL   |                     ZONE DE TRAVAIL CENTRALE                  | | Conseil       | |
+| [ ] 04. Trade |                     (DYNAMIQUE SELON PHASE)                   | | contextuel    | |
+| [ ] 05. Bus   |                                                               | | temps réel    | |
+| [ ] 06. Payld |                                                               | +---------------+ |
+| [ ] 07. Orbit |                                                               |                   |
+| [ ] 08. Lnchr |                                                               | TEAM CHAT & PINGS |
+| [ ] 09. MRR   |                                                               | [Sci]: Ping Masse |
+| [ ] 10. Lnch  |                                                               | [Sys]: En cours.. |
+| [ ] 11. Ops   |                                                               | [Input message..] |
+| [ ] 12. Viz   |                                                               | [Bouton: VALIDER] |
++---------------+---------------------------------------------------------------+-------------------+
+ÉCRAN A : ACCUEIL & SÉLECTION DE MODE (/home)
+Plaintext
++---------------------------------------------------------------------------------------------------+
+| [NASA SPACE APPS EDITION]                                                             [FR / EN]   |
+|                                                                                                   |
+|                                    [ ICÔNE ORBITALE VECTORIELLE ]                                 |
+|                                           M I S S I O N S P H E R E                               |
+|                                     "Design. Negotiate. Launch. Learn."                           |
+|                                                                                                   |
+|          +-----------------------------------+       +-----------------------------------+        |
+|          |           MODE SOLO               |       |        MODE COLLABORATIF          |        |
+|          |                                   |       |                                   |        |
+|          |  Incarnez l'équipe complète avec  |       |  1 à 4 joueurs en temps réel.     |        |
+|          |  le soutien actif de SPACE MENTOR |       |  Négociez chaque compromis.       |        |
+|          |                                   |       |                                   |        |
+|          |      [ DÉMARRER EN SOLO ]         |       |  [ CRÉER SALLE ] [ REJOINDRE ]    |        |
+|          +-----------------------------------+       +-----------------------------------+        |
+|                                                                                                   |
+|   Basé sur : [CML] • [Mission Design Lab] • [GMAT] • [Mission Viz] • [CubeSat 101]                |
++---------------------------------------------------------------------------------------------------+
+ÉCRAN B : LOBBY MULTIJOUEUR (/lobby/:roomId)
+Plaintext
++---------------------------------------------------------------------------------------------------+
+| [< RETOUR]   SALLE DE BRIEFING MISSION CONTROL   |   CODE D'ACCÈS : [ NASA-429 ] [COPIER LIEN]    |
++---------------------------------------------------------------------------------------------------+
+| CHOISISSEZ VOTRE RÔLE AU SEIN DU MISSION DESIGN LAB (MDL) :                                       |
+|                                                                                                   |
+|  +-----------------------+  +-----------------------+  +-----------------------+  +-------------+ |
+|  | 1. MISSION MANAGER    |  | 2. SCIENCE LEAD       |  | 3. SYSTEMS ENGINEER   |  | 4. OPS LEAD | |
+|  | [Assigné: Alex]       |  | [Assigné: Sarah]      |  | [LIBRE]               |  | [LIBRE]     | |
+|  |                       |  |                       |  |                       |  |             | |
+|  | • Budget & Calendrier |  | • Cible & Instruments |  | • Structure & Énergie |  | • Orbite 3D | |
+|  | • Arbitrage & Votes   |  | • Résolution requise  |  | • Bilan de Masse      |  | • Antennes  | |
+|  | • Feu vert final (MRR)|  | • Qualité des données |  | • Choix du Lanceur    |  | • Crises    | |
+|  |                       |  |                       |  |                       |  |             | |
+|  | [ PRÊT ✓ ]            |  | [ PRÊT ✓ ]            |  | [ CHOISIR CE RÔLE ]   |  | [ CHOISIR ] | |
+|  +-----------------------+  +-----------------------+  +-----------------------+  +-------------+ |
+|                                                                                                   |
+|  OPTIONS DE PARTIE : [Difficulté: Standard v] [Modificateur: Aucun v]                             |
+|                                                                                                   |
+|                                  [ LANCER LE MISSION BRIEFING >>> ]                               |
++---------------------------------------------------------------------------------------------------+
+PHASE 1 : MISSION BRIEFING (CHOIX DE LA CIBLE)
+Plaintext
++---------------------------------------------------------------------------------------------------+
+| [HUD TÉLÉMÉTRIE : EN ATTENTE DES PARAMÈTRES DE MISSION]                                           |
++---------------+---------------------------------------------------------------+-------------------+
+| TIMELINE      | SÉLECTIONNEZ L'OBJECTIF SCIENTIFIQUE DE LA MISSION :          | SPACE MENTOR      |
+| [>] 01. Brief |                                                               |                   |
+| [ ] 02. Req.  |  +-------------------+ +-------------------+ +--------------+ | "Chaque cible     |
+| ...           |  | [TERRE]           | | [TERRE]           | | [TERRE]      | | impose des lois   |
+|               |  | INONDATIONS       | | DÉFORESTATION     | | MÉGA-FEUX    | | physiques strictes|
+|               |  | Obs. sous nuages  | | Suivi biomasse    | | Détection IR | | (ensoleillement,  |
+|               |  +-------------------+ +-------------------+ +--------------+ | distance, météo)."|
+|               |  +-------------------+ +-------------------+ +--------------+ |                   |
+|               |  | [TERRE]           | | [LUNE]            | | [MARS]       | |                   |
+|               |  | OCÉANS & CLIMAT   | | GLACE POLAIRE     | | ATMOSPHÈRE   | |                   |
+|               |  | Couleur de l'eau  | | Ressources H2O    | | Climat & Gaz | |                   |
+|               |  +-------------------+ +-------------------+ +--------------+ |                   |
+|               |                                                               |                   |
+|               |  FICHE CIBLE SÉLECTIONNÉE : [INONDATIONS & CYCLE DE L'EAU]    |                   |
+|               |  • Défi majeur : Les tempêtes impliquent une couverture       |                   |
+|               |    nuageuse dense (Capteur optique classique inefficace).     |                   |
+|               |  • Objectif Science cible : 85 pts | Revisite max : 3 jours.  | [VALIDER CIBLE >] |
++---------------+---------------------------------------------------------------+-------------------+
+PHASE 2 : REQUIREMENTS DEFINITION (CONTRAINTES PROJET)
+Plaintext
++---------------------------------------------------------------------------------------------------+
+| [HUD : BUDGET MAX: $180M | DURÉE CIBLE: 3 ANS | RISQUE MAX: 25%]                                  |
++---------------+---------------------------------------------------------------+-------------------+
+| TIMELINE      | DÉFINITION DES EXIGENCES DU PROGRAMME (CML-1)                 | SPACE MENTOR      |
+| [x] 01. Brief |                                                               |                   |
+| [>] 02. Req.  |  1. ENVELOPPE BUDGÉTAIRE ALLOUÉE (Contrôle: Mission Manager)  | "Un budget serré  |
+| [ ] 03. MDL   |     $50M  [=================O----------]  $400M  ($180M)      | orientera votre   |
+| ...           |                                                               | équipe vers une   |
+|               |  2. RÉSOLUTION SPATIALE REQUISE (Contrôle: Science Lead)      | architecture      |
+|               |     100m  [==============O-------------]  0.5m   (10m/px)     | CubeSat plutôt    |
+|               |                                                               | qu'un satellite   |
+|               |  3. DURÉE DE VIE OPÉRATIONNELLE (Contrôle: Systems Eng.)      | monolithique."    |
+|               |     1 an  [===========O----------------]  10 ans (3 ans)      |                   |
+|               |                                                               |                   |
+|               |  4. TOLÉRANCE AU RISQUE TECHNIQUE (Contrôle: Ops Lead)        |                   |
+|               |     5%    [=========O------------------]  50%    (25%)        |                   |
+|               |                                                               |                   |
+|               |  +---------------------------------------------------------+  |                   |
+|               |  | ÉTUDE DE FAISABILITÉ INITIALE : [ 🟢 FAISABLE (82%) ]   |  |                   |
+|               |  | Le ratio Budget / Exigences scientifiques est cohérent. |  | [PASSER AU MDL >] |
+|               |  +---------------------------------------------------------+  |                   |
++---------------+---------------------------------------------------------------+-------------------+
+PHASE 3 : MISSION DESIGN LAB (MDL - SESSION COLLABORATIVE)
+Plaintext
++---------------------------------------------------------------------------------------------------+
+| [HUD : BUDGET: $180M | CIBLE: INONDATIONS | CML-2 EN COURS]                                       |
++---------------+---------------------------------------------------------------+-------------------+
+| TIMELINE      | SALLE DE CONCEPTION COLLABORATIVE (MISSION DESIGN LAB)        | SPACE MENTOR      |
+| [x] 01. Brief |                                                               |                   |
+| [x] 02. Req.  |  PROPOSITIONS DE STRATÉGIE D'ÉQUIPE :                         | "Le MDL sert à    |
+| [>] 03. MDL   |                                                               | aligner toute     |
+| [ ] 04. Trade |  +---------------------------------------------------------+  | l'équipe avant de |
+| ...           |  | [Science Lead] : "Priorité à l'imagerie Radar SAR pour  |  | figer les plans.  |
+|               |  | percer les nuages lors des ouragans."                   |  | Votez pour la     |
+|               |  | Votes : [✓ Manager] [✓ Science] [ ] Systems [✓ Ops]     |  | doctrine globale."|
+|               |  +---------------------------------------------------------+  |                   |
+|               |  +---------------------------------------------------------+  |                   |
+|               |  | [Systems Eng.] : "Limiter la masse sous 400kg pour      |  |                   |
+|               |  | utiliser un lanceur léger et économiser $45M."          |  |                   |
+|               |  | Votes : [✓ Manager] [ ] Science [✓ Systems] [✓ Ops]     |  |                   |
+|               |  +---------------------------------------------------------+  |                   |
+|               |                                                               |                   |
+|               |  [+ SOUMETTRE UNE NOUVELLE PROPOSITION]                       |                   |
+|               |  Statut du consensus : 3/4 Rôles alignés                      | [CLÔTURER VOTE >] |
++---------------+---------------------------------------------------------------+-------------------+
+PHASE 4 : TRADE STUDIES (ÉTUDES DE COMPROMIS)
+Plaintext
++---------------------------------------------------------------------------------------------------+
+| [HUD : BUDGET: $180M | MASSE: -- | PUISSANCE: -- | CML-2 -> CML-3]                                |
++---------------+---------------------------------------------------------------+-------------------+
+| TIMELINE      | MATRICE DE COMPROMIS D'ARCHITECTURES (TRADE SPACE)            | SPACE MENTOR      |
+| [x] 03. MDL   |                                                               |                   |
+| [>] 04. Trade |  +---------------------+ +---------------------+ +------------+ | "Comparez les     |
+| [ ] 05. Bus   |  | OPTION A (Classique)| | OPTION B (CubeSat)  | | OPTION C   | | polygones radar : |
+| ...           |  | Satellite Moyen     | | Constellation 3x 6U | | Plateforme | | L'Option A offre  |
+|               |  | Radar SAR + SSO     | | Caméra Optique + LEO| | GEO Lourde | | plus de science   |
+|               |  |                     | |                     | |            | | mais consomme 75% |
+|               |  |   [GRAPHE RADAR]    | |   [GRAPHE RADAR]    | | [GRAPHE]   | | de votre budget." |
+|               |  |   Science: 95/100   | |   Science: 60/100   | | Sci: 75    | |                   |
+|               |  |   Coût: $135M       | |   Coût: $55M        | | Coût: $210M| |                   |
+|               |  |   Risque: 15%       | |   Risque: 32%       | | Risque: 18%| |                   |
+|               |  |                     | |                     | |            | |                   |
+|               |  |  [ VOTER OPTION A ] | |  [ VOTER OPTION B ] | | [ BLOQUÉ ] | |                   |
+|               |  +---------------------+ +---------------------+ +------------+ |                   |
+|               |                                                               |                   |
+|               |  Résultat du vote d'équipe : OPTION A sélectionnée (3 votes)  | [FIGER DESIGN >]  |
++---------------+---------------------------------------------------------------+-------------------+
+PHASE 5 : SPACECRAFT BUILDER (VUE 2.5D ISOMÉTRIQUE)
+Plaintext
++---------------------------------------------------------------------------------------------------+
+| [HUD : BUDGET: $65M/$180M | MASSE: 280kg | PUISSANCE: +120W | RISQUE: 14%]                        |
++---------------+---------------------------------------------------------------+-------------------+
+| TIMELINE      | CATALOGUE SOUS-SYSTÈMES    | ASSEMBLAGE SATELLITE (VUE 2.5D)  | SPACE MENTOR      |
+| [x] 04. Trade |                            |                                  |                   |
+| [>] 05. Bus   | [1. CHÂSSIS (BUS)]         |         [Panneau GaAs G]         | "Votre châssis    |
+| [ ] 06. Payld |  • CubeSat 6U ($2M, 12kg)  |                \                 | SmallSat est      |
+| ...           |  • [x] SmallSat ($25M,150kg)|         +---------------+        | équilibré. Si le  |
+|               |  • Bus Lourd ($60M, 500kg) |         |  SMALLSAT BUS |        | Science Lead      |
+|               |                            |         | [OBC Rad-Hard]  |        | ajoute un Radar,  |
+|               | [2. ÉNERGIE & BATTERIES]   |         | [Batt. Li-Ion]  |        | prévoyez au moins |
+|               |  • [x] Panneaux GaAs +450W |         +---------------+        | +400W de marge !" |
+|               |  • [x] Batt. Li-Ion 200Wh  |                /                 |                   |
+|               |                            |         [Antenne Bande-X]        |                   |
+|               | [3. TÉLÉCOMS & AVIONIQUE]  |                                  |                   |
+|               |  • Antenne Bande-S (10Mbps)|  Centre de gravité : 🟢 STABLE   |                   |
+|               |  • [x] Bande-X (150 Mbps)  |  Marge thermique   : 🟢 NOMINAL  | [VERS PAYLOAD >]  |
++---------------+----------------------------+----------------------------------+-------------------+
+PHASE 6 : PAYLOAD DESIGN (CHARGE UTILE)
+Plaintext
++---------------------------------------------------------------------------------------------------+
+| [HUD : BUDGET: $115M/$180M | MASSE: 410kg | PUISSANCE: +20W (🟠) | DATA: 140/150 Mbps]            |
++---------------+---------------------------------------------------------------+-------------------+
+| TIMELINE      | INSTRUMENTS SCIENTIFIQUES DISPONIBLES (BAIE PAYLOAD: 2/3 SLOTS) | SPACE MENTOR      |
+| [x] 05. Bus   |                                                               |                   |
+| [>] 06. Payld |  +-----------------------------------+ +--------------------+ | "Alerte Énergie : |
+| [ ] 07. Orbit |  | [ÉQUIPÉ] RADAR SAR BANDE-C        | | CAMÉRA OPTIQUE HR  | | Le Radar SAR      |
+| ...           |  | Coût: $50M | Masse: 130kg         | | Coût: $20M | 35kg  | | consomme 380W !   |
+|               |  | Conso: -380W | Data: 140 Mbps     | | Conso: -60W | 40Mbps| | Votre marge tombe |
+|               |  | Science: +75 pts (Perce nuages)   | | Science: +45 pts   | | à +20W. Vérifiez  |
+|               |  | [ RETIRER L'INSTRUMENT ]          | | [ AJOUTER (+20M) ] | | les éclipses."    |
+|               |  +-----------------------------------+ +--------------------+ |                   |
+|               |  +-----------------------------------+ +--------------------+ |                   |
+|               |  | SPECTROMÈTRE ATMOSPHÉRIQUE        | | RADIOMÈTRE IR      | |                   |
+|               |  | Coût: $30M | Masse: 45kg          | | Coût: $25M | 40kg  | |                   |
+|               |  | Conso: -90W | Data: 25 Mbps       | | Conso: -110W| 15Mbps| |                   |
+|               |  | [ AJOUTER (+30M) ]                | | [ AJOUTER (+25M) ] | |                   |
+|               |  +-----------------------------------+ +--------------------+ |                   |
+|               |  Score Science Estimé : 75 / 85 pts requis                    | [VERS ORBITE >]   |
++---------------+---------------------------------------------------------------+-------------------+
+PHASE 7 : ORBIT DESIGN (VISUALISATION 3D THREE.JS)
+Plaintext
++---------------------------------------------------------------------------------------------------+
+| [HUD : BUDGET: $115M/$180M | MASSE: 410kg | PUISSANCE: +20W | RÉSOLUTION: 3.2m | REVISITE: 2.5j]  |
++---------------+---------------------------------------------------------------+-------------------+
+| TIMELINE      | [ VIEWPORT 3D INTERACTIF - THREE.JS / GMAT ENGINE ]           | SPACE MENTOR      |
+| [x] 06. Payld |                                                               |                   |
+| [>] 07. Orbit |                        . - ~ ~ ~ - .                          | "L'orbite SSO à   |
+| [ ] 08. Lnchr |                    . '     _..._     ' .                      | 650 km offre un   |
+| ...           |                  /      .-'     '-.      \                    | excellent équilibre|
+|               |                 |      /   TERRE   \      | <--- Orbite SSO   | entre résolution  |
+|               |                  \     \  [Swath]  /     /       (650 km)     | radar et traînée  |
+|               |                   '.    '-._ _.-'    .'                       | atmosphérique     |
+|               |                     ' - . _ _ _ . - '                         | réduite."         |
+|               |  [Caméra: Orbite | Terre | Swath]   [Vitesse Sim: 1x | 100x]  |                   |
+|               +---------------------------------------------------------------+-------------------+
+|               | CONTRÔLES ORBITAUX (Operations Lead)                          |                   |
+|               | Type : [LEO] [POLAIRE / SSO (Actif)] [GEO] [LUNE] [MARS]      |                   |
+|               | Altitude : 300km [=========O-------------] 1200km (650 km)    |                   |
+|               | Inclinaison : 98.0° (Héliosynchrone automatique)              | [VERS LANCEUR >]  |
++---------------+---------------------------------------------------------------+-------------------+
+PHASE 8 : LAUNCH VEHICLE (SÉLECTION DU LANCEUR)
+Plaintext
++---------------------------------------------------------------------------------------------------+
+| [HUD : BUDGET: $180M/$180M (🟢) | MASSE: 410/1200kg (🟢) | ORBITE CIBLE: SSO 650km]                |
++---------------+---------------------------------------------------------------+-------------------+
+| TIMELINE      | SÉLECTION DU LANCEUR & COMPATIBILITÉ COIFFE                   | SPACE MENTOR      |
+| [x] 07. Orbit |                                                               |                   |
+| [>] 08. Lnchr |  +--------------------+ +--------------------+ +------------+ | "Le lanceur léger |
+| [ ] 09. MRR   |  | LANCEUR LÉGER      | | [SÉLECTIONNÉ]      | | LANCEUR    | | est trop juste en |
+| ...           |  | (Type Electron)    | | LANCEUR MOYEN      | | LOURD      | | masse vers 650km. |
+|               |  | Coût: $15M         | | (Type Falcon 9)    | | Coût: $140M| | Le Lanceur Moyen  |
+|               |  | Capacité SSO: 250kg| | Coût: $65M         | | Cap: 8000kg| | absorbe tout votre|
+|               |  |                    | | Capacité SSO:1200kg| |            | | budget restant    |
+|               |  | [ 🔴 SURPOIDS ]    | | [ 🟢 COMPATIBLE ]  | | [ 🔴 CHER ]| | ($180M total)."   |
+|               |  +--------------------+ +--------------------+ +------------+ |                   |
+|               |                                                               |                   |
+|               |  DIAGRAMME D'INTÉGRATION COIFFE (2D) :                        |                   |
+|               |  [=== Coiffe 3.7m : Satellite 410kg installé (Marge: 65%) ===]  | [VERS REVUE MRR >]|
++---------------+---------------------------------------------------------------+-------------------+
+PHASE 9 : MISSION READINESS REVIEW (MRR - AUDIT FINAL)
+Plaintext
++---------------------------------------------------------------------------------------------------+
+| [HUD : TOUS LES SYSTÈMES EN REVUE DE PRÉPARATION AU LANCEMENT (CML-5 -> CML-6)]                   |
++---------------+---------------------------------------------------------------+-------------------+
+| TIMELINE      | CHECKLIST D'AUDIT SYSTÈME NASA (MRR)                          | SPACE MENTOR      |
+| [x] 08. Lnchr |                                                               |                   |
+| [>] 09. MRR   |  [ 🟢 NOMINAL ]  1. BUDGET : $180M / $180M (Marge: 0% - Exact)| "Attention : votre|
+| [ ] 10. Lnch  |  [ 🟢 NOMINAL ]  2. MASSE  : 410kg / 1200kg (Marge: +65%)     | marge électrique  |
+| ...           |  [ 🟠 WARNING ]  3. ÉNERGIE: +20W (Marge faible en éclipse)   | est en Orange. Le |
+|               |  [ 🟢 NOMINAL ]  4. DATA   : 140 / 150 Mbps (Bande-X OK)      | lancement reste   |
+|               |  [ 🟢 NOMINAL ]  5. RISQUE : 16% (Sous le seuil de 25%)       | autorisé mais un  |
+|               |  [ 🟢 NOMINAL ]  6. ORBITE & LANCEUR : Compatibilité validée  | incident solaire  |
+|               |                                                               | sera critique."   |
+|               |  +---------------------------------------------------------+  |                   |
+|               |  | DÉCISION DU MISSION MANAGER :                           |  |                   |
+|               |  | [ < RETOURNER MODIFIER LE DESIGN ]                      |  |                   |
+|               |  | [ 🚀 AUTORISER LE LANCEMENT ("GO FOR LAUNCH") ]         |  |                   |
+|               |  +---------------------------------------------------------+  |                   |
++---------------+---------------------------------------------------------------+-------------------+
+PHASE 10 : LAUNCH (SÉQUENCE DE LANCEMENT 3D)
+Plaintext
++---------------------------------------------------------------------------------------------------+
+| [T+ 00:02:45 | ALTITUDE: 112 km | VITESSE: 7,840 km/h | MAX-Q: PASSÉ | ÉTAGE 1: SÉPARÉ]          |
++---------------+---------------------------------------------------------------+-------------------+
+| TIMELINE      | [ ANIMATION 3D THREE.JS : DÉCOLLAGE & INSERTION ORBITALE ]    | SPACE MENTOR      |
+| [x] 09. MRR   |                                                               |                   |
+| [>] 10. Lnch  |                          *  (Satellite)                       | "Séparation du    |
+| [ ] 11. Ops   |                         /                                     | premier étage     |
+| ...           |                        /  Trajectoire balistique              | nominale.         |
+|               |                       /                                       | Allumage du second|
+|               |              . - ~ ~ ~ - .                                    | étage pour        |
+|               |          . '     TERRE     ' .                                | circulariser      |
+|               |                                                               | l'orbite à 650km."|
+|               |  JOURNAL DE VOL EN DIRECT :                                   |                   |
+|               |  [T+00:00] Allumage moteurs principaux... OK                  |                   |
+|               |  [T+01:12] Passage de Max-Q (Pression max)... OK              |                   |
+|               |  [T+02:40] Séparation coiffe & déploiement panneaux...        | [VERS OPÉRATIONS >]|
++---------------+---------------------------------------------------------------+-------------------+
+PHASE 11 : MISSION OPERATIONS (GESTION DE CRISE EN TEMPS RÉEL)
+Plaintext
++---------------------------------------------------------------------------------------------------+
+| [ANNÉE 1 / 3 | DONNÉES COLLECTÉES: 38% | SANTÉ SATELLITE: 92% | ALERTE ACTIVE 🔴]                 |
++---------------+---------------------------------------------------------------+-------------------+
+| TIMELINE      | CONSOLE D'OPÉRATIONS & GESTION D'ANOMALIES                    | SPACE MENTOR      |
+| [x] 10. Lnch  |                                                               |                   |
+| [>] 11. Ops   |  +---------------------------------------------------------+  | "Une tempête      |
+| [ ] 12. Viz   |  | ⚠️ ALERTE CRITIQUE : TEMPÊTE SOLAIRE CLASSE X !         |  | solaire sature    |
+| ...           |  | Flux de protons élevé détecté. Votre marge électrique   |  | vos capteurs.     |
+|               |  | faible (+20W) expose l'ordinateur de bord à un reboot.  |  | Le mode survie    |
+|               |  | Temps restant pour décider : [ 00:24s ]                 |  | protège le matériel|
+|               |  +---------------------------------------------------------+  | mais suspend la   |
+|               |                                                               | collecte pendant  |
+|               |  CHOIX D'ACTION COLLABORATIVE (Vote rapide requis) :          | 3 mois."          |
+|               |  [1] PASSER EN SAFE MODE (-15% Science, 0% Risque de panne)   |                   |
+|               |  [2] MAINTENIR LE RADAR (+10% Science, 45% Risque panne OBC)  |                   |
+|               |  [3] RÉORIENTER PANNEAUX (Consomme 20% ergols, -6 mois vie)   |                   |
++---------------+---------------------------------------------------------------+-------------------+
+PHASE 12 : MISSION VISUALIZATION CENTER (INSPIRÉ DE MISSION VIZ)
+Plaintext
++---------------------------------------------------------------------------------------------------+
+| [MISSION EN COURS : 100% COMPLÉTÉE | TRACE AU SOL: 4,200 ORBITES | LIAISON DSN: ACTIVE]           |
++---------------+---------------------------------------------------------------+-------------------+
+| TIMELINE      | [ VIEWPORT 3D MISSION VIZ - TRAJECTOIRE & COUVERTURE ]        | SPACE MENTOR      |
+| [x] 11. Ops   |                                                               |                   |
+| [>] 12. Viz   |                  . - ~ ~ ~ - .                                | "Observez comment |
+| [ ] 13. Res   |              . '  \  |  /     ' .  <-- Fauchée Radar (Swath)  | l'orbite polaire  |
+| ...           |            /       \ | /         \                            | permet de couvrir |
+|               |           |   [Sat]--X--[Station] | <-- Liaison Bande-X       | l'intégralité du  |
+|               |            \       / | \         /                            | globe terrestre   |
+|               |              '.   /  |  \     .'                              | grâce à la        |
+|               |                ' - . _ _ _ . - '                              | rotation de la    |
+|               |                                                               | Terre."           |
+|               |  CONTRÔLES MISSION VIZ :                                      |                   |
+|               |  [Afficher Trace au Sol ✓] [Afficher Cône Radar ✓] [Liens DSN ✓]| [VOIR RÉSULTATS >]|
++---------------+---------------------------------------------------------------+-------------------+
+PHASES 13, 14 & 15 : ÉCRANS DE FIN DE MISSION (/mission/:roomId/summary)
+Écran 13 : Scientific Results
+Plaintext
++---------------------------------------------------------------------------------------------------+
+| [RAPPORT SCIENTIFIQUE FINAL : MISSION INONDATIONS]                               [SUIVANT: BILAN >]|
++---------------------------------------------------------------------------------------------------+
+|  +-----------------------------------------------+  +-------------------------------------------+ |
+|  | [CARTE SATELLITE GÉNÉRÉE : DELTA DU MÉKONG]   |  | DÉCOUVERTES SCIENTIFIQUES MAJEURES :      | |
+|  |                                               |  |                                           | |
+|  |   Zones inondées détectées sous couverture    |  | • Cartographie de 14 500 km² de zones     | |
+|  |   nuageuse dense grâce au Radar SAR Bande-C.  |  |   inondées avec une précision de 3.2m.    | |
+|  |   [Légende: Bleu clair = Eau | Rouge = Crue]  |  | • Délai d'alerte réduit de 48h pour les   | |
+|  |                                               |  |   populations locales.                    | |
+|  +-----------------------------------------------+  | • Qualité des données : 91% (Excellente)  | |
+|                                                     +-------------------------------------------+ |
++---------------------------------------------------------------------------------------------------+
+Écran 14 : Post-Mission Analysis
+Plaintext
++---------------------------------------------------------------------------------------------------+
+| [ANALYSE POST-MISSION & SCORING]                                           [SUIVANT: MATCH NASA >]|
++---------------------------------------------------------------------------------------------------+
+|  SCORE GLOBAL : [ 845 / 1000 ]  —  RANG : [ ARCHITECTE SPATIAL SENIOR ]                           |
+|                                                                                                   |
+|  • Science (35%)       : [====================---] 88/100                                         |
+|  • Budget (20%)        : [======================-] 95/100 (Utilisation optimale de 100% du budget)|
+|  • Ingénierie (20%)    : [================-------] 76/100 (Marge électrique trop tendue en Ph.6)  |
+|  • Collaboration (15%) : [===================----] 85/100 (Consensus rapide en MDL)               |
+|  • Survie (10%)        : [==================-----] 80/100 (Safe Mode bien géré en Phase 11)       |
+|                                                                                                   |
+|  DIAGNOSTIC DE SPACE MENTOR :                                                                     |
+|  "Votre choix du Radar SAR sur orbite SSO était brillant pour les inondations. Pour atteindre     |
+|  950+, ajoutez un panneau solaire supplémentaire afin d'éviter le passage en Safe Mode."          |
++---------------------------------------------------------------------------------------------------+
+Écran 15 : NASA Historical Comparison
+Plaintext
++---------------------------------------------------------------------------------------------------+
+| [COMPARAISON HISTORIQUE NASA]                                        [EXPORTER PDF] [REJOUER]     |
++---------------------------------------------------------------------------------------------------+
+|                        VOTRE DESIGN EST SIMILAIRE À 89% À LA MISSION NASA :                       |
+|                                       ***  S W O T  ***                                           |
+|                       (Surface Water and Ocean Topography — Lancée en 2022)                       |
+|                                                                                                   |
+|  +---------------------------------------+               +--------------------------------------+ |
+|  | VOTRE SATELLITE (MISSIONSPHERE)       |               | MISSION RÉELLE NASA (SWOT)           | |
+|  | • Cible : Inondations & Eau           |               | • Cible : Hydrologie & Océans        | |
+|  | • Instrument : Radar SAR Bande-C      |               | • Instrument : Radar interféromètre  | |
+|  | • Orbite : Polaire / SSO (650 km)     |               | • Orbite : Quasi-polaire (891 km)    | |
+|  | • Masse : 410 kg | Coût : $180M       |               | • Masse : 2 000 kg | Coût : $1.2B    | |
+|  +---------------------------------------+               +--------------------------------------+ |
+|                                                                                                   |
+|  [BADGE DÉBLOQUÉ : HYDROLOGUE ORBITAL] — Ajouté à votre collection de missions NASA !             |
++---------------------------------------------------------------------------------------------------+
